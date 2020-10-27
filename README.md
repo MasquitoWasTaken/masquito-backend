@@ -6,7 +6,7 @@ Fullstack application to tell if you're wearing a mask right
 
 1. Clone this repository
 2. Install the pip dependencies listed below
-3. Download the latest model from the [releases](https://github.com/MasquitoWasTaken/masquito-ml-training/releases) tab
+3. Download the latest model from the [releases](https://github.com/MasquitoWasTaken/masquito-ml-training/releases) tab in `masquito-ml-training`
 4. Place the `.h5` file in `training_data/models/`
 5. Run the code with `python ./app.py`
 6. Send a request to the server using the guide below
