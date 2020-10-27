@@ -12,6 +12,7 @@ from PIL import Image
 import tempfile
 
 
+# Contains ImageAI Predictor class
 class Predictor:
     def __init__(self, model):
         execution_path = os.getcwd()
@@ -31,6 +32,7 @@ class Predictor:
         return result
 
 
+# Intentionally global variable
 predictor = Predictor("model_ex-067_acc-0.953125.h5")
 
 log = logging.getLogger('werkzeug')
@@ -38,6 +40,7 @@ log.setLevel(logging.ERROR)
 app = Flask(__name__)
 
 
+# API's only route
 @app.route("/mask", methods=["POST"])
 def post_mask():
     image_uri = request.args.get("image").replace(" ", "+")
@@ -56,5 +59,4 @@ def post_mask():
 
 
 if __name__ == "__main__":
-
     app.run("127.0.0.1", 8080)
