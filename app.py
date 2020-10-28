@@ -25,10 +25,11 @@ class Predictor:
         self.prediction.loadModel(num_objects=3)
 
     def predict(self, image):
-        predictions, probabilities = self.prediction.predictImage(image)
+        predictions, probabilities = self.prediction.predictImage(
+            image, result_count=3)
         result = {}
         for prediction, probability in zip(predictions, probabilities):
-            result[prediction] = probability
+            result[prediction] = "{0:.8f}".format(probability.item())
         return result
 
 
